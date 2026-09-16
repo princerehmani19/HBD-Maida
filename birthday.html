@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Maida 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Poppins",Arial,sans-serif;
+    background:#080512;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+        radial-gradient(circle at 20% 20%,#7b1fa255,transparent 30%),
+        radial-gradient(circle at 80% 30%,#ff408155,transparent 30%),
+        radial-gradient(circle at 50% 90%,#651fff44,transparent 35%),
+        #080512;
+}
+
+.stars span{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 3s infinite ease-in-out;
+    opacity:.5;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2;transform:scale(.7)}
+    50%{opacity:1;transform:scale(1.5)}
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.small-title{
+    color:#ff9bcf;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(55px,10vw,110px);
+    line-height:.95;
+    background:linear-gradient(90deg,#fff,#ffb5df,#ff4fa3,#fff);
+    background-size:300%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:gradient 5s infinite;
+}
+
+@keyframes gradient{
+    0%{background-position:0%}
+    50%{background-position:100%}
+    100%{background-position:0%}
+}
+
+.hero h2{
+    font-size:clamp(20px,4vw,34px);
+    font-weight:400;
+    margin-top:20px;
+    color:#f5d9eb;
+}
+
+.hero p{
+    max-width:650px;
+    margin:25px auto;
+    color:#cbbccc;
+    line-height:1.8;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn{
+    display:inline-block;
+    border:none;
+    padding:14px 28px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff4fa3,#9c27b0);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 10px 35px #ff4fa344;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 15px 45px #ff4fa366;
+}
+
+/* ---------- COUNTDOWN ---------- */
+
+.countdown-section{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:clamp(30px,5vw,50px);
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    color:#a99aaa;
+    margin-bottom:45px;
+}
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    width:145px;
+    height:145px;
+    border:1px solid #ffffff22;
+    border-radius:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff08;
+    backdrop-filter:blur(15px);
+    box-shadow:inset 0 0 30px #ff4fa30b;
+}
+
+.time-box .number{
+    font-size:45px;
+    font-weight:700;
+    color:#ff91c9;
+}
+
+.time-box .label{
+    color:#aaa;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+/* ---------- MESSAGE ---------- */
+
+.messages{
+    padding:90px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:22px;
+    margin-top:45px;
+}
+
+.card{
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#ffffff0c,#ffffff04);
+    border:1px solid #ffffff12;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#ff4fa366;
+}
+
+.card .emoji{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:#ff9bcd;
+}
+
+.card p{
+    color:#c4b8c7;
+    line-height:1.8;
+}
+
+/* ---------- PHOTO ---------- */
+
+.photo-section{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.photo-frame{
+    width:min(330px,90vw);
+    height:420px;
+    margin:40px auto;
+    border-radius:30px;
+    padding:8px;
+    background:linear-gradient(135deg,#ff4fa3,#8e24aa,#ff9bd1);
+    box-shadow:0 20px 70px #ff4fa322;
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:24px;
+    background:#17101c;
+}
+
+.photo-note{
+    color:#8f8292;
+    font-size:13px;
+}
+
+/* ---------- SURPRISE ---------- */
+
+.surprise{
+    padding:100px 20px;
+    text-align:center;
+}
+
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    display:inline-block;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+.hidden-message{
+    max-width:700px;
+    margin:30px auto 0;
+    padding:30px;
+    border-radius:25px;
+    background:#ff4fa30d;
+    border:1px solid #ff4fa344;
+    display:none;
+    animation:appear .8s ease;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.hidden-message.show{
+    display:block;
+}
+
+.hidden-message p{
+    color:#e8dbe7;
+    line-height:2;
+    font-size:17px;
+}
+
+/* ---------- FINAL ---------- */
+
+.final{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.final h2{
+    font-size:clamp(40px,7vw,75px);
+}
+
+.final span{
+    color:#ff67ae;
+}
+
+.final p{
+    color:#aaa;
+    margin:25px auto;
+    max-width:600px;
+    line-height:1.8;
+}
+
+/* ---------- HEARTS ---------- */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:10;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#665c69;
+    font-size:13px;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px){
+    .time-box{
+        width:120px;
+        height:120px;
+    }
+
+    .time-box .number{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="stars">
+    <span style="left:5%;top:15%;animation-delay:.2s"></span>
+    <span style="left:15%;top:70%;animation-delay:1s"></span>
+    <span style="left:28%;top:30%;animation-delay:1.7s"></span>
+    <span style="left:40%;top:80%;animation-delay:.5s"></span>
+    <span style="left:52%;top:20%;animation-delay:2s"></span>
+    <span style="left:67%;top:65%;animation-delay:1.3s"></span>
+    <span style="left:75%;top:12%;animation-delay:.8s"></span>
+    <span style="left:88%;top:45%;animation-delay:2.3s"></span>
+    <span style="left:95%;top:80%;animation-delay:1.5s"></span>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="small-title">
+A little surprise for someone special
+</div>
+
+<h1>Maida 💖</h1>
+
+<h2>Someone worth celebrating.</h2>
+
+<p>
+Some people make ordinary days feel a little brighter.
+This little website is just a small way of saying
+<strong>Happy Birthday in advance, Maida!</strong> 🎀
+</p>
+
+<a href="#countdown" class="btn">
+See The Countdown ✨
+</a>
+
+</div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section" id="countdown">
+
+<h2 class="section-title">
+The Clock Is Ticking ⏳
+</h2>
+
+<p class="section-subtitle">
+Counting every second until September 17 🎂
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+<div class="number" id="days">00</div>
+<div class="label">Days</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="hours">00</div>
+<div class="label">Hours</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="minutes">00</div>
+<div class="label">Minutes</div>
+</div>
+
+<div class="time-box">
+<div class="number" id="seconds">00</div>
+<div class="label">Seconds</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGES -->
+
+<section class="messages">
+
+<h2 class="section-title">
+A Few Words For You 💌
+</h2>
+
+<p class="section-subtitle">
+Because one birthday message is definitely not enough.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="emoji">🌷</div>
+<h3>Stay Amazing</h3>
+<p>
+Never forget how special you are.
+Keep smiling, keep dreaming and keep being the wonderful person you are.
+</p>
+</div>
+
+<div class="card">
+<div class="emoji">✨</div>
+<h3>New Memories</h3>
+<p>
+I hope this new year of your life brings countless beautiful memories,
+unexpected happiness and lots of reasons to smile.
+</p>
+</div>
+
+<div class="card">
+<div class="emoji">🦋</div>
+<h3>Keep Growing</h3>
+<p>
+May every new chapter bring you closer to the things you dream about.
+Believe in yourself and never stop moving forward.
+</p>
+</div>
+
+<div class="card">
+<div class="emoji">💗</div>
+<h3>Our Friendship</h3>
+<p>
+Some friendships don't need a reason to exist.
+They simply become one of those little treasures we are grateful for.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PHOTO 
+
+<section class="photo-section">
+
+<h2 class="section-title">
+A Memory 📸
+</h2>
+
+<p class="section-subtitle">
+Replace this image with your favorite picture of Maida.
+</p>
+
+<div class="photo-frame">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80"
+alt="Birthday memory"
+>
+
+</div>
+
+<p class="photo-note">
+💡 Change the image URL inside the &lt;img&gt; tag to your own photo.
+</p>
+
+</section>
+-->
+
+<!-- SURPRISE -->
+
+<section class="surprise">
+
+<h2 class="section-title">
+One More Thing... 🎁
+</h2>
+
+<p class="section-subtitle">
+There is a tiny surprise waiting for you.
+</p>
+
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<div class="hidden-message" id="secretMessage">
+
+<p>
+Maida, I hope your birthday is filled with happiness,
+peace, laughter and beautiful moments. 🌸
+<br><br>
+
+May the coming year give you many reasons to smile,
+many dreams to chase and many memories to keep.
+<br><br>
+
+And whenever life gets a little difficult,
+remember that brighter days always come again. ✨
+<br><br>
+
+<strong>Happy Birthday, Maida! 🎂💖</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<div>
+
+<h2>
+Happy Birthday<br>
+<span>Maida 💗</span>
+</h2>
+
+<p>
+17 September isn't just another date anymore.
+It's the day someone wonderful came into this world.
+May your day be as beautiful as the smiles you bring to others.
+</p>
+
+<button class="btn" onclick="createHearts()">
+Make It Rain Hearts 💕
+</button>
+
+</div>
+
+</section>
+
+
+<footer>
+Made with 💗 specially for Maida • 17 September
+</footer>
+
+
+<script>
+
+/* =========================================
+   BIRTHDAY COUNTDOWN
+   ========================================= */
+
+function getBirthday(){
+
+    const now = new Date();
+
+    let year = now.getFullYear();
+
+    let birthday = new Date(
+        year,
+        8,        // September = 8
+        17,
+        0,0,0
+    );
+
+    // If this year's birthday has passed,
+    // countdown to next year's birthday.
+
+    if(now >= birthday){
+        birthday = new Date(
+            year + 1,
+            8,
+            17,
+            0,0,0
+        );
+    }
+
+    return birthday;
+}
+
+
+function updateCountdown(){
+
+    const now = new Date();
+    const birthday = getBirthday();
+
+    const difference = birthday - now;
+
+    if(difference <= 0){
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+        return;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* =========================================
+   GIFT SURPRISE
+   ========================================= */
+
+function openGift(){
+
+    const message =
+        document.getElementById("secretMessage");
+
+    message.classList.toggle("show");
+
+    createHearts();
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+function createHearts(){
+
+    for(let i=0;i<25;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className="heart";
+
+        const hearts=[
+            "💗",
+            "💖",
+            "💕",
+            "💓",
+            "✨",
+            "🌸"
+        ];
+
+        heart.textContent =
+            hearts[Math.floor(Math.random()*hearts.length)];
+
+        heart.style.left =
+            Math.random()*100+"vw";
+
+        heart.style.fontSize =
+            (15 + Math.random()*25)+"px";
+
+        heart.style.animationDuration =
+            (4 + Math.random()*5)+"s";
+
+        heart.style.animationDelay =
+            Math.random()*2+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },10000);
+    }
+}
+
+
+/* =========================================
+   AUTOMATIC SMALL HEART EFFECT
+   ========================================= */
+
+setInterval(()=>{
+
+    if(Math.random()>.45){
+        const heart =
+            document.createElement("div");
+
+        heart.className="heart";
+
+        heart.textContent =
+            Math.random()>.5 ? "💗" : "✨";
+
+        heart.style.left =
+            Math.random()*100+"vw";
+
+        heart.style.fontSize =
+            "18px";
+
+        heart.style.animationDuration =
+            "7s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },7000);
+    }
+
+},1800);
+
+</script>
+
+</body>
+</html>
+```
